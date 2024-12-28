@@ -61,5 +61,4 @@ console.log(a>>2);
 console.log(a<<2);
 
 //ternary operator
-
-if(a<b?console.log(a):console.log(b));
+a<b?console.log(a):console.log(b);
