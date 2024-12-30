@@ -1,0 +1,12 @@
+.box-model{
+    font-size: 20px;
+    text-align: center;
+    margin:10px;
+    color: lightseagreen;
+    border: 5px solid;
+    padding: 10px;
+}
+
+#id-eg{
+    text-align: center;  
+}
