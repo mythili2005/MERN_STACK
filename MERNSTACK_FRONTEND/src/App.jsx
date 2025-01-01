@@ -9,6 +9,9 @@ import Gallery from './Components/functionalComponents/Gallery';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Contact from './Components/functionalComponents/Contact';
 import Footer from './Components/functionalComponents/Footer';
+import UseEffect from './Components/functionalComponents/UseEffect';
+import UseRef from './Components/functionalComponents/UseRef';
+import ExamResults from './Components/functionalComponents/useContext';
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
 		    <Route path = "/" element={<Home />}/>
 		    <Route path = 'About' element={<About class = "Advanced Fullstack" clg ="KEC" />}/>
         <Route path = 'Gallery' element={<Gallery/>}/>
+        <Route path = 'use-effect' element = {<UseEffect />}/>
+        <Route path = 'use-ref' element = {<UseRef />}/>
+        <Route path = 'use-context' element = {<ExamResults />}/>
         <Route path = 'Contact' element={<Contact/>}/>
 	    </Routes>
       </BrowserRouter>
@@ -28,4 +34,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
