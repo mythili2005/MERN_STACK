@@ -13,6 +13,7 @@ const NavBar = () =>{
                     <li><Link to = "/use-effect">useEffect</Link></li>
                     <li><Link to = "/use-ref">useRef</Link></li>
                     <li><Link to = "/use-context">useContext</Link></li>
+                    <li><Link to = "/use-memo">useMemo</Link></li>
                 </ul>
             </nav>
         </header>

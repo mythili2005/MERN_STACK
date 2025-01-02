@@ -12,6 +12,7 @@ import Footer from './Components/functionalComponents/Footer';
 import UseEffect from './Components/functionalComponents/UseEffect';
 import UseRef from './Components/functionalComponents/UseRef';
 import ExamResults from './Components/functionalComponents/useContext';
+import UseMemo from './Components/functionalComponents/UseMemo';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path = 'use-effect' element = {<UseEffect />}/>
         <Route path = 'use-ref' element = {<UseRef />}/>
         <Route path = 'use-context' element = {<ExamResults />}/>
+        <Route path = 'use-memo' element = {<UseMemo />} />
         <Route path = 'Contact' element={<Contact/>}/>
 	    </Routes>
       </BrowserRouter>
