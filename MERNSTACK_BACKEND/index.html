@@ -7,10 +7,34 @@
 </head>
 <body>
     <script>
-        myFunction=() => {
+        myFunction = () => {
         location.replace("http://localhost:3001/static2")
         }
+        click = () =>{
+            window.alert("Form submitted successfully")
+        }
     </script>
+    <form>
+        <label>Enter your first name:
+             <input type="text" placeholder="eg:John" /><br>
+        </label>
+        <label>Enter your last name:
+            <input type ="text" placeholder="eg:Doe"/><br>
+        </label>
+        <label>Enter your email:
+            <input type ="email" placeholder="example@gmail.com"/>
+        </label><br>
+        <label>Enter your password:
+            <input type ="password" />
+        </label><br>
+        <label>Enter your phone number:
+            <input type ="number" placeholder="9123456780"/>
+        </label><br>
+        <label>Enter your Date of Birth:
+            <input type ="date"/>
+        </label><br>
+        <button onclick="click()">Submit</button>
+    </form>
     <h1>Static File</h1>
     <button onclick="myFunction()">Click</button>
 </body>

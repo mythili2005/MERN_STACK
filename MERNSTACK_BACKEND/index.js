@@ -1,11 +1,90 @@
 var express = require('express');
+var path = require('path');
+var mongodb = require('mongoose');
+var User = require('./models/users')
 var app = express();
 const PORT = 3001;
+app.use(express.json())
 
-app.get('/',(req,res) => {res.json("Welcome to Backend server")});
-app.get('/json',(req,res) => {res.send("Welcome to backend")});
-app.get('/static',(req,res)=>{res.sendFile(`D:/MERN_STACK/MERNSTACK_BACKEND/index.html`)});
-app.get('/static2',(req,res)=>{res.sendFile(`D:/MERN_STACK/MERNSTACK_BACKEND/static.html`)});
-app.listen(PORT,()=>{
-    console.log(`Backend server started\nUrl:http://localhost:${PORT}`)
+mongodb.connect("mongodb://localhost:27017").then(() => {
+    console.log("Mongodb connection successful");
+}).catch(() => {
+    console.log("Check your connection string");
+})
+
+app.get('/', (req, res) => { res.json("Welcome to Backend server") });
+app.get('/json', (req, res) => { res.send("Welcome to backend") });
+app.get('/static', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+app.get('/static2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static.html'));
+
+});
+
+app.post('/signup',(req,res) => {
+    //var {firstName,lastName,email} =  req.body
+    try{
+        //var newUser = new User({firstName:firstName,lastName:lastName,email:email});
+        var newUser = new User(req.body);
+        newUser.save()
+        console.log("User added successfully")
+        res.status(200).send("User added successfully");
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+app.get('/getsignup',async(req,res)=>{
+    try{
+        
+        var allSignUpRecords = await User.find()
+        res.json(allSignUpRecords);
+        console.log("All data are fetched")
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+app.delete('/deletedusers',async(req,res)=>{
+    try{
+        var{firstName}= req.body;
+        
+        var deletingUser = await User.deleteOne({firstName:firstName});
+        console.log(deletingUser);
+        if(deletingUser.deletedCount == 0)
+        {
+            res.json({message:"Enter the user correctly",isDelete:false})
+        }
+        else{
+        res.json({message:"Deleted successfully",isDelete:true})
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+app.post('/login',async (req,res)=>{
+    var{email,password}= req.body;
+    try{
+        var existingUser = await User.findOne({email:email});
+        console.log(existingUser)
+        if(existingUser.password != password)
+        {
+            res.json({message:"Invalid credentials",isLoggedIn:false})
+        }
+        else{
+        res.json({message:"Login successful",isLoggedIn:true})
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+app.listen(PORT,()=>{
+    console.log(`Backend server is started\nURL:http://localhost:${PORT}`)
+})

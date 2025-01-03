@@ -11,7 +11,9 @@
   "license": "ISC",
   "description": "This is a backend repository",
   "dependencies": {
-  "express": "^4.21.2",
-  "nodemon": "^3.1.9"
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7"
   }
 }

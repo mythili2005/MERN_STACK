@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        myFunction = () => {
+        location.replace("http://localhost:3001/static")
+        }
+        click = () =>{
+            alert("Form submitted succesffully")
+        }
+    </script>
+    <form>
+   <label>Enter your email:
+       <input type ="email" placeholder="example@gmail.com"/>
+   </label><br>
+   <label>Enter your password:
+       <input type ="password" />
+   </label><br>
+   <button onclick="click()">Submit</button>
+    </form>
     <h1>Static page 2</h1>
+    <button onclick="myFunction()">Back</button>
 </body>
 </html>
