@@ -2,7 +2,7 @@ import React from "react";
 import Component2 from "./ContextComponents/Component2";
 
 export var ThemeProvider = React.createContext();
-var ExamResults = () =>{
+var UseContext = () =>{
     return(
         <section>
             <ThemeProvider.Provider value ={{sgpa:"10.00",cgpa:"9.8"}} >
@@ -12,4 +12,4 @@ var ExamResults = () =>{
         </section>
     )
 }
- export default ExamResults;
+ export default UseContext;

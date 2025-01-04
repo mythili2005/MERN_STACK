@@ -11,7 +11,7 @@ import Contact from './Components/functionalComponents/Contact';
 import Footer from './Components/functionalComponents/Footer';
 import UseEffect from './Components/functionalComponents/UseEffect';
 import UseRef from './Components/functionalComponents/UseRef';
-import ExamResults from './Components/functionalComponents/useContext';
+import UseContext from './Components/functionalComponents/useContext';
 import UseMemo from './Components/functionalComponents/UseMemo';
 import LogIn from './Components/functionalComponents/LogIn';
 import SignUp from './Components/functionalComponents/SignUp';
@@ -28,7 +28,7 @@ function App() {
         <Route path = 'Gallery' element={<Gallery/>}/>
         <Route path = 'use-effect' element = {<UseEffect />}/>
         <Route path = 'use-ref' element = {<UseRef />}/>
-        <Route path = 'use-context' element = {<ExamResults />}/>
+        <Route path = 'use-context' element = {<UseContext />}/>
         <Route path = 'use-memo' element = {<UseMemo />} />
         <Route path = 'login' element = {<LogIn />}/>
         <Route path = 'signup' element = {<SignUp />} />
