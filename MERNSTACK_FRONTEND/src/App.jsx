@@ -11,7 +11,7 @@ import Contact from './Components/functionalComponents/Contact';
 import Footer from './Components/functionalComponents/Footer';
 import UseEffect from './Components/functionalComponents/UseEffect';
 import UseRef from './Components/functionalComponents/UseRef';
-import UseContext from './Components/functionalComponents/useContext';
+import UseContext from './Components/functionalComponents/UseContext';
 import UseMemo from './Components/functionalComponents/UseMemo';
 import LogIn from './Components/functionalComponents/LogIn';
 import SignUp from './Components/functionalComponents/SignUp';
