@@ -1,12 +1,16 @@
 var express = require('express');
 var path = require('path');
 var mongodb = require('mongoose');
-var User = require('./models/users')
+var cors = require('cors');
+var denv = require('dotenv')
+var User = require('./models/users');
 var app = express();
 const PORT = 3001;
 app.use(express.json())
+app.use(cors())
+denv.config()
 
-mongodb.connect("mongodb://localhost:27017").then(() => {
+mongodb.connect(process.env.MONGO_URL).then(() => {
     console.log("Mongodb connection successful");
 }).catch(() => {
     console.log("Check your connection string");
@@ -72,13 +76,20 @@ app.post('/login',async (req,res)=>{
     try{
         var existingUser = await User.findOne({email:email});
         console.log(existingUser)
-        if(existingUser.password != password)
+        console.log(req.body);
+        if(existingUser)
+        {
+        if(existingUser.password !== password)
         {
             res.json({message:"Invalid credentials",isLoggedIn:false})
         }
         else{
         res.json({message:"Login successful",isLoggedIn:true})
         }
+    }
+    else{
+        res.json({message:"User not found",isLoggedIn:false})
+    }
     }
     catch(error){
         console.log(error)

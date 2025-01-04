@@ -7,6 +7,7 @@ const Footer = () =>{
     return(
         <footer>
             <section>
+                <h1>Feedback Form</h1>
             <form>
                 <label>Enter your name:
                      <input type="text" /><br></br>
@@ -14,8 +15,8 @@ const Footer = () =>{
                 <label>Enter your department:
                     <input type ="text"/><br></br>
                 </label>
-                <label>Enter your number:
-                    <input type ="number"/>
+                <label>Enter your Feedback:
+                    <textarea rows="2" cols="50" placeholder="Enter text here..."></textarea>
                 </label><br></br>
                 <button onClick={click}>Submit</button>
             </form>

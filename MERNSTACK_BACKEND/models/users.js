@@ -4,7 +4,9 @@ var userSchema = mongodb.Schema({
     firstName: String,
     lastName: String,
     email: String,
-    password: String
+    password: String,
+    phoneNumber: Number,
+    DateOfBirth:String
 });
 
 var user_schema = mongodb.model("users", userSchema);

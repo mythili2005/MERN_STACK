@@ -14,6 +14,8 @@ const NavBar = () =>{
                     <li><Link to = "/use-ref">useRef</Link></li>
                     <li><Link to = "/use-context">useContext</Link></li>
                     <li><Link to = "/use-memo">useMemo</Link></li>
+                    <li><Link to = "/login">Login</Link></li>
+                    <li><Link to = "/signup">Signup</Link></li>
                 </ul>
             </nav>
         </header>
