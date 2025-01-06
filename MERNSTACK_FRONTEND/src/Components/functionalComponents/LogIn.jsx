@@ -8,7 +8,7 @@ const LogIn = () =>{
     var navigate = useNavigate();
     var loggedIn = async (event)=>{
         event.preventDefault();
-        var req = await axios.post('http://localhost:3001/login',{
+        var req = await axios.post('https://mern-stack-djti.onrender.com/login',{
             email,password 
         })
         console.log(req.data);

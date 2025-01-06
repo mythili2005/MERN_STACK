@@ -15,7 +15,7 @@ const SignUp = () =>{
     }
     var signUp = async(event) =>{
         event.preventDefault()
-        var req = await axios.post('http://localhost:3001/signup',{
+        var req = await axios.post('https://mern-stack-djti.onrender.com/signup',{
             firstName:firstname,
             lastName:lastname,
             email:email,
